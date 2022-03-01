@@ -1,8 +1,11 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.AccountsPage;
+import pages.CreateAccountPage;
 import pages.LoginPage;
+import testdata.GetNewAccountModel;
 
 public class SalesForceAccountTest extends BaseTest {
 
@@ -17,6 +20,8 @@ public class SalesForceAccountTest extends BaseTest {
         AccountsPage accountsPage = new AccountsPage(driver);
         accountsPage.openAccountsTab();
         accountsPage.openCreateAccountModel();
+        CreateAccountPage createAccountPage = new CreateAccountPage(driver);
+        createAccountPage.saveNewAccountForm(GetNewAccountModel.getAccountWithAllFields());
         System.out.println("");
     }
 }
