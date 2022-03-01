@@ -19,6 +19,7 @@ public class BaseTest {
         driverManager.createDriver();
         driver = driverManager.getDriver();
         System.out.println("Start Driver");
+        driverManager.maximize();
         driverManager.setTimeout();
     }
 
