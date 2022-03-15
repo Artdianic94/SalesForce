@@ -1,15 +1,14 @@
 package factorydriver;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import staticdata.WebTimeouts;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 public abstract class DriverManager {
     public WebDriver driver;
+    private WebDriverWait wait;
 
     public abstract void createDriver();
 
@@ -21,6 +20,7 @@ public abstract class DriverManager {
         driver.manage().timeouts().setScriptTimeout(WebTimeouts.SCRIPT_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(WebTimeouts.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(WebTimeouts.IMPLICIT_TIMEOUT, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 10);
     }
 
     public void maximize() {
