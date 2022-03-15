@@ -27,4 +27,29 @@ public class GenerateFakeMessage {
         Faker faker = new Faker();
         return faker.country().countryCode2();
     }
+
+    public static String getEmployees() {
+        Faker faker = new Faker();
+        return String.valueOf(faker.number().numberBetween(1000, 5000));
+    }
+
+    public static String getAnnualRevenue() {
+        Faker faker = new Faker();
+        return String.valueOf(faker.number().numberBetween(500000, 1000000));
+    }
+
+    public static String getDescription() {
+        Faker faker = new Faker();
+        return faker.company().industry();
+    }
+
+    public static String getStreet() {
+        Faker faker = new Faker();
+        return faker.address().streetAddress();
+    }
+
+    public static String getCity() {
+        Faker faker = new Faker();
+        return faker.address().city();
+    }
 }

@@ -1,15 +1,14 @@
 package factorydriver;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import staticdata.WebTimeouts;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 public abstract class DriverManager {
     public WebDriver driver;
+    private WebDriverWait wait;
 
     public abstract void createDriver();
 
