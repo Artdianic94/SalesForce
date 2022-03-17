@@ -1,6 +1,6 @@
 package pages;
 
-import factorydriver.DriverManager;
+import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -9,7 +9,6 @@ import java.util.function.Function;
 
 public class AlertMessagesPage extends BasePage {
 
-    DriverManager driverManager;
     private By ALERT_XPATH = By.xpath("//span[@class='toastMessage slds-text-heading--small forceActionsText']");
 
     public AlertMessagesPage(WebDriver driver) {
@@ -28,6 +27,7 @@ public class AlertMessagesPage extends BasePage {
         fluentWait.until(booleanFunction);
     }
 
+    @Step("Get text from the alert message")
     public String alertMessageGetText() {
         waitForElementIsDisplayed(driver.findElement(ALERT_XPATH), 10);
         return driver.findElement(ALERT_XPATH).getText();
