@@ -1,5 +1,8 @@
 package tests;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import models.SalesForceAccountModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;

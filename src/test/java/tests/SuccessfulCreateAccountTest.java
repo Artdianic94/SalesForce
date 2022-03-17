@@ -1,25 +1,28 @@
 package tests;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.*;
 import testdata.GetNewAccountModel;
 
 import java.io.IOException;
 
+@Epic("Web test")
+@Feature("Creating new accounts")
+@Story("Creating new accounts and checking for a message about the successful creation of accounts")
 public class SuccessfulCreateAccountTest extends BaseTest {
 
     public static final String EMAIL = "dissewouddauda-3563-4s6a@force.com";
     public static final String PASSWORD = "1234Artdianic";
     private static final Logger LOGGER = LogManager.getLogger(SuccessfulCreateAccountTest.class.getName());
 
+    @Description("Checking for the massage that an account has been successfully created")
     @Test()
     public void checkSuccessfulCreateAccountTest() throws IOException {
         LOGGER.info("'Check successful create account' test started");
